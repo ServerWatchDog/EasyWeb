@@ -1,0 +1,18 @@
+<form class="login-form" [formGroup]="loginForm">
+  <div class="login-context">
+    <h2 class="text-center">登录</h2>
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>邮箱</mat-label>
+      <input matInput="email" minlength="2" type="email" formControlName="email" placeholder="hi@example.com"/>
+    </mat-form-field>
+    <mat-form-field class="full-width" appearance="fill">
+      <mat-label>密码</mat-label>
+      <input matInput="password" type="password" formControlName="password" placeholder="password"/>
+    </mat-form-field>
+  <div class="button-context">
+    <a><p class="forget-btn btn" routerLink="/users/reset">忘记密码</p></a>
+    <a><p class="register-btn btn" routerLink="/users/register">没有账户？请注册</p></a>
+    <button mat-raised-button [disabled]="!loginForm.valid"  color="primary" class="login-btn" type="submit"  (click)="login()">登陆</button>
+  </div>
+  </div>
+</form>

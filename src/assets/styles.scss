@@ -1,0 +1,25 @@
+
+
+.clear-fix::before,
+.clear-fix::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.btn{
+  cursor: pointer;
+}
