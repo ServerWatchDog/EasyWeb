@@ -10,10 +10,13 @@ export class SecurityService {
   constructor(private globalService: GlobalService) {
   }
 
-  encryptWithPublicKey(valueToEncrypt: string): string {
+  encryptWithPublicKey(data:any): string {
+    return this.encryptStringWithPublicKey(JSON.stringify(data))
+  }
+  encryptStringWithPublicKey(data: string): string {
     const rsa = Forge.pki.publicKeyFromPem("-----BEGIN PUBLIC KEY-----\r\n"
       + this.globalService.publicKey +
       "\r\n-----END PUBLIC KEY-----");
-    return window.btoa(rsa.encrypt(valueToEncrypt.toString()));
+    return window.btoa(rsa.encrypt(data));
   }
 }

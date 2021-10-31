@@ -1,47 +1,34 @@
 import {Injectable} from '@angular/core';
 import {SecurityService} from "./security.service";
-import {SessionHttpService} from "./session-http.service";
+import {SessionHttpService} from "./connect/session-http.service";
+import {emptyLoginInfo, GlobalService, LoginInfo} from "./global.service";
+import {SessionService} from "./session.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-  userName = '未登陆';
-  isLogin = false;
-  userImage = '';
+  info: LoginInfo = emptyLoginInfo();
 
   constructor(
     private security: SecurityService,
-    private http: SessionHttpService
+    private http: SessionHttpService,
+    private global: GlobalService,
+    private session:SessionService
   ) {
-  }
-
-  update() {
-    this.status((status, data) => {
-      if (status) {
-        this.userName = data.userName;
-        this.isLogin = true;
-        this.userImage = data.icon;
-      } else {
-        this.userName = '未登陆';
-        this.isLogin = false;
-        this.userImage = '';
-      }
+    global.getLoginInfo(info => {
+      this.info = info
     })
   }
 
-  status(status: (status: boolean, data: any) => void) {
-    this.http.get('/users/status', (msg) => {
-      status(true, msg)
-    }, () => status(false, null))
-  }
 
   login(email: string, password: string, success: () => void, fail: (msg: string) => void) {
     const loginData = ({
       email: email,
-      password: this.security.encryptWithPublicKey(password),
+      password: password,
+      code: ''
     });
-    this.http.post('/users/login', loginData, () => {
+    this.http.post('/view/user/login', loginData, () => {
       success()
     }, (code, message) => {
       fail(message)
@@ -49,14 +36,9 @@ export class UserService {
   }
 
   logout() {
-    this.http.get('/users/logout', () => {
-      this.userName = '未登陆';
-      this.isLogin = false;
-      this.userImage = '';
+    this.http.get('/view/user/logout', () => {
     }, () => {
-      this.userName = '未登陆';
-      this.isLogin = false;
-      this.userImage = '';
     })
+    this.session.clear()
   }
 }

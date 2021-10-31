@@ -1,0 +1,27 @@
+
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button class="menu-icon" (click)="toggleMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>主页</span>
+    <span class="example-spacer"></span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-tab-group mat-align-tabs="center" color="accent" backgroundColor="primary">
+  <mat-tab label="First">
+    <ng-template matTabContent>
+      Content 1
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="Second ">
+    <ng-template matTabContent>
+      Content 2
+    </ng-template>
+  </mat-tab>
+  <mat-tab label="Third">
+    <ng-template matTabContent>
+      Content 3
+    </ng-template>
+  </mat-tab>
+</mat-tab-group>

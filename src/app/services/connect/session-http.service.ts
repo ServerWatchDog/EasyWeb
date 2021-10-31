@@ -1,13 +1,14 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {SessionService} from "./session.service";
-import {environment} from "../../environments/environment";
+import {SessionService} from "../session.service";
+import {environment} from "../../../environments/environment";
+import {InHttp} from "./in-http";
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class SessionHttpService {
+export class SessionHttpService implements InHttp{
 
   constructor(
     private http: HttpClient,
