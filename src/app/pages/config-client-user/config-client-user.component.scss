@@ -1,0 +1,39 @@
+.content{
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.content-item{
+  width: 26%;
+  min-width: 300px;
+  max-width: 500px;
+  margin: 10px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  &>*{
+    display: inline-block;
+   }
+  .left-icon{
+    *{
+      width: 100%;
+      display: block;
+      font-size: 30px;
+    }
+  }
+  .child{
+    margin-left: 20px;
+    display: inline-block;
+    flex-grow:4;
+  }
+
+}
+.add-btn {
+  padding: 10px;
+  right: 20px;
+  position: fixed;
+  z-index: 999;
+  bottom: 20px;
+}

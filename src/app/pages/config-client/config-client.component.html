@@ -1,1 +1,17 @@
-<p>config-client works!</p>
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <button mat-icon-button class="menu-icon" (click)="dash.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>终端管理</span>
+    <span class="spacer"></span>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-tab-group dynamicHeight  selectedIndex="0" mat-align-tabs="center" color="accent" backgroundColor="primary">
+  <mat-tab label="终端管理">
+      <app-config-client-user></app-config-client-user>
+  </mat-tab>
+  <mat-tab label="分组管理" >
+        <app-config-client-group></app-config-client-group>
+  </mat-tab>
+</mat-tab-group>

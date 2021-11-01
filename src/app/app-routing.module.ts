@@ -3,9 +3,9 @@ import {RouterModule, Routes} from '@angular/router';
 import {LoginComponent} from "./pages/login/login.component";
 import {IndexComponent} from "./pages/index/index.component";
 import {InstallComponent} from "./pages/install/install.component";
-import {PanelComponent} from "./pages/panel/panel.component";
 import {ConfigUserComponent} from "./pages/config-user/config-user.component";
 import {ConfigClientComponent} from "./pages/config-client/config-client.component";
+import {DashBoardComponent} from "./pages/dashboard/dash-board.component";
 
 const routes: Routes = [
   {
@@ -15,7 +15,7 @@ const routes: Routes = [
     children: [
       {
         path: 'dashboard',
-        component: PanelComponent
+        component: DashBoardComponent
       }, {
         path: 'user',
         component: ConfigUserComponent,

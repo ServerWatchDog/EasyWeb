@@ -1,0 +1,33 @@
+<div class="content">
+
+  <mat-card class="content-item" *ngFor="let data of clientData.data">
+    <div class="left-icon">
+      <mat-icon aria-hidden="false">computer</mat-icon>
+    </div>
+    <div class="child">
+      <div class="title">
+        名称：{{data.name}}
+      </div>
+      <div class="status">
+        状态：{{data.enabled?'已启用':'已关闭'}}
+      </div>
+      <div class="status">
+        用户：{{data.user.name}}
+      </div>
+    </div>
+    <div class="option">
+      <button mat-icon-button (click)="update(data)">
+        <mat-icon aria-hidden="false"  >settings</mat-icon>
+      </button>
+      <button mat-icon-button color="warn" (click)="delete(data)">
+        <mat-icon aria-hidden="false"  >delete</mat-icon>
+      </button>
+
+    </div>
+  </mat-card>
+  <div class="add-btn" >
+    <button mat-fab color="accent" (click)="insert()">
+      <mat-icon>add</mat-icon>
+    </button>
+  </div>
+</div>

@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {DashboardDrawerService} from "../../services/dashboard-drawer.service";
+import {TitleService} from "../../services/title.service";
 
 @Component({
   selector: 'app-config-client',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ConfigClientComponent implements OnInit {
 
-  constructor() { }
+  constructor(public dash: DashboardDrawerService,private title:TitleService) {
+  }
 
   ngOnInit(): void {
+    this.title.setTitle("终端管理")
   }
 
 }

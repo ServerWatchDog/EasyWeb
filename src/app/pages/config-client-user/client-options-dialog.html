@@ -1,0 +1,32 @@
+<h1 mat-dialog-title>终端详情</h1>
+<div mat-dialog-content>
+  <mat-form-field class="full-width" appearance="outline">
+    <mat-label>名称</mat-label>
+    <input matInput placeholder="" [(ngModel)]="insert.name">
+  </mat-form-field>
+  <div class="select-user">
+    <mat-form-field class="full-width" disabled appearance="outline" (click)="selectUser()">
+      <mat-label>用户</mat-label>
+      <input matInput type="text" disabled [ngModel]="userName">
+    </mat-form-field>
+  </div>
+  <div class="token">
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Token</mat-label>
+      <input matInput placeholder="" disabled [(ngModel)]="data.token">
+    </mat-form-field>
+  </div>
+</div>
+<div class="enable" style="text-align: right">
+
+  <span>开启监控</span>
+  <mat-slide-toggle style="margin-left: 10px" [(ngModel)]="insert.enabled"></mat-slide-toggle>
+</div>
+<div class="refresh-token" style="text-align: right">
+  <span>刷新 Token</span>
+  <mat-slide-toggle style="margin-left: 10px" [(ngModel)]="insert.refreshToken"></mat-slide-toggle>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="closeClick()">取消</button>
+  <button mat-button (click)="submitClick()">确定</button>
+</div>

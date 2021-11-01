@@ -13,7 +13,13 @@
   max-width: 300px;
   left: 0;
 }
-.data-context{
+.site{
   width: 100%;
-  margin: 0 auto;
+  height: 100%;
+
+  .data-context{
+    height: 100%;
+    margin: 0 auto;
+  }
+
 }
