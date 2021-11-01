@@ -7,20 +7,17 @@
   </mat-form-field>
   <mat-form-field class="full-width" appearance="outline">
     <mat-label>邮箱</mat-label>
-    <input matInput placeholder=""[formControl]="email">
+    <input matInput placeholder="" [formControl]="email">
   </mat-form-field>
   <mat-form-field class="full-width" appearance="outline">
     <mat-label>密码</mat-label>
     <input matInput type="password" [formControl]="password">
   </mat-form-field>
-  <mat-form-field appearance="outline" class="full-width">
-    <mat-label>用户组</mat-label>
-    <mat-select [formControl]="group">
-      <mat-option *ngFor="let group of groups" [value]="groups">
-        {{group}}
-      </mat-option>
-    </mat-select>
+  <mat-form-field class="full-width" disabled appearance="outline" (click)="selectGroup()">
+    <mat-label>角色</mat-label>
+    <input matInput type="text" disabled [(ngModel)]="group" >
   </mat-form-field>
+
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="closeClick()">取消</button>

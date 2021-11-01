@@ -19,7 +19,7 @@ export class UserSelectorComponent {
   }
 
   updateUsers(index: number) {
-    this.sHttp.get<Users>("/admin/user?index=" + index + "&size=10" , res => {
+    this.sHttp.get<Users>("/admin/user?index=" + index + "&size=9999" , res => {
       this.users = res.data
     })
   }

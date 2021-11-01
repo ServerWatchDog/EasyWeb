@@ -23,7 +23,7 @@ import {MatListModule} from "@angular/material/list";
 import {MatRippleModule} from "@angular/material/core";
 import {MatDialog, MatDialogModule} from "@angular/material/dialog";
 import {ConfigClientComponent} from './pages/config-client/config-client.component';
-import {ConfigUserComponent, UserConfigDialog, UserDeleteDialog} from './pages/config-user/config-user.component';
+import {ConfigUserUserComponent, UserConfigDialog} from './pages/config-user-user/config-user-user.component';
 import {DashBoardComponent} from './pages/dashboard/dash-board.component';
 import {MatTableModule} from "@angular/material/table";
 import {MatPaginatorModule} from "@angular/material/paginator";
@@ -34,9 +34,13 @@ import {MatCardModule} from "@angular/material/card";
 import {MatExpansionModule} from "@angular/material/expansion";
 import {ClientInsertDialog} from "./pages/config-client-user/client-insert-dialog";
 import {ClientOptionDialog} from "./pages/config-client-user/client-options-dialog";
-import { UserSelectorComponent } from './views/user-selector/user-selector.component';
+import {UserSelectorComponent} from './views/user-selector/user-selector.component';
 import {MatSlideToggleModule} from "@angular/material/slide-toggle";
-import { DeleteViewComponent } from './views/delete-view/delete-view.component';
+import {DeleteViewComponent} from './views/delete-view/delete-view.component';
+import {ConfigUserGroupComponent} from './pages/config-user-group/config-user-group.component';
+import {ConfigUserComponent} from "./pages/config-user/config-user.component";
+import { UserGroupSelectorComponent } from './views/user-group-selector/user-group-selector.component';
+import { UserGroupInsertComponent } from './views/user-group-insert/user-group-insert.component';
 
 @NgModule({
   declarations: [
@@ -48,15 +52,18 @@ import { DeleteViewComponent } from './views/delete-view/delete-view.component';
     SidebarComponent,
     SidebarDialogComponent,
     UserConfigDialog,
-    UserDeleteDialog,
     ClientInsertDialog,
     ClientOptionDialog,
     ConfigClientComponent,
+    ConfigUserUserComponent,
     ConfigUserComponent,
     ConfigClientUserComponent,
     ConfigClientGroupComponent,
     UserSelectorComponent,
     DeleteViewComponent,
+    ConfigUserGroupComponent,
+    UserGroupSelectorComponent,
+    UserGroupInsertComponent,
   ],
   imports: [
     MatDialogModule,

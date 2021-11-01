@@ -3,9 +3,13 @@ import {RouterModule, Routes} from '@angular/router';
 import {LoginComponent} from "./pages/login/login.component";
 import {IndexComponent} from "./pages/index/index.component";
 import {InstallComponent} from "./pages/install/install.component";
-import {ConfigUserComponent} from "./pages/config-user/config-user.component";
 import {ConfigClientComponent} from "./pages/config-client/config-client.component";
 import {DashBoardComponent} from "./pages/dashboard/dash-board.component";
+import { ConfigUserComponent } from './pages/config-user/config-user.component';
+import {ConfigUserUserComponent} from "./pages/config-user-user/config-user-user.component";
+import {ConfigUserGroupComponent} from "./pages/config-user-group/config-user-group.component";
+import {ConfigClientUserComponent} from "./pages/config-client-user/config-client-user.component";
+import {ConfigClientGroupComponent} from "./pages/config-client-group/config-client-group.component";
 
 const routes: Routes = [
   {
@@ -19,9 +23,29 @@ const routes: Routes = [
       }, {
         path: 'user',
         component: ConfigUserComponent,
+        children:[
+          {
+            path:'user',
+            component:ConfigUserUserComponent
+          },
+          {
+            path:'group',
+            component:ConfigUserGroupComponent
+          }
+        ]
       }, {
         path: 'client',
         component: ConfigClientComponent,
+        children:[
+          {
+            path:'client',
+            component:ConfigClientUserComponent
+          },
+          {
+            path:'group',
+            component:ConfigClientGroupComponent
+          }
+        ]
       }
     ]
   },

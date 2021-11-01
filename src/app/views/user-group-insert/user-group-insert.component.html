@@ -1,0 +1,24 @@
+<h1 mat-dialog-title *ngIf="internalData == null">添加角色</h1>
+<h1 mat-dialog-title *ngIf="internalData != null">修改角色</h1>
+<div mat-dialog-content>
+ <div class="name">
+   <mat-form-field class="full-width" appearance="outline">
+     <mat-label>名称</mat-label>
+     <input matInput placeholder="" [(ngModel)]="data.name">
+   </mat-form-field>
+ </div>
+  <div class="select">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>配置权限</mat-label>
+      <mat-select [(ngModel)]="data.authorities" name="food" multiple>
+        <mat-option *ngFor="let authority of authorities" [value]="authority">
+          {{authority}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+</div>
+<div mat-dialog-actions>
+  <button mat-button [matDialogClose]="null">取消</button>
+  <button mat-button [matDialogClose]="data">确定</button>
+</div>

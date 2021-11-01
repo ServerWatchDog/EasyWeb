@@ -4,7 +4,7 @@ import {CrudClient, CrudInsertClient} from "../../models/crud-client";
 import {SessionHttpService} from "../../services/connect/session-http.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
 import {MatDialog} from "@angular/material/dialog";
-import {UserConfigDialog} from "../config-user/config-user.component";
+import {UserConfigDialog} from "../config-user-user/config-user-user.component";
 import {ClientInsertDialog} from "./client-insert-dialog";
 import {ClientOptionDialog} from "./client-options-dialog";
 import {DeleteViewComponent} from "../../views/delete-view/delete-view.component";
@@ -55,8 +55,8 @@ export class ConfigClientUserComponent implements OnInit {
 
   delete(data: CrudClient) {
     this.dialog.open(DeleteViewComponent, {
-      data:'是否确认删除终端  \"' + data.name + '\"? 删除后将不可恢复！',
-      width:'400px'
+      data: '是否确认删除终端  \"' + data.name + '\"? 删除后将不可恢复！',
+      width: '400px'
     }).afterClosed().subscribe(res => {
       if (res) {
         this.http.delete('/admin/client/' + data.id, () => {
@@ -74,10 +74,6 @@ export class ConfigClientUserComponent implements OnInit {
       .afterClosed()
       .subscribe(result => {
         if (result === '' || result == null) {
-          this._snackBar.open('输入不正确！', '', {
-            duration: 1000
-          })
-
           return;
         }
         const data: CrudInsertClient = {

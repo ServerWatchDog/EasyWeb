@@ -25,10 +25,10 @@ export class SidebarComponent implements OnInit {
     },
     {
       title: '终端管理',
-      url: '/client'
+      url: '/client/client'
     },{
       title: '用户管理',
-      url: '/user'
+      url: '/user/user'
     },
   ]
   menu: Menu[] = [...this.defaultMenu];

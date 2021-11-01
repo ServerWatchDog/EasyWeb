@@ -7,11 +7,10 @@
     <span class="spacer"></span>
   </mat-toolbar-row>
 </mat-toolbar>
-<mat-tab-group dynamicHeight  selectedIndex="0" mat-align-tabs="center" color="accent" backgroundColor="primary">
-  <mat-tab label="终端管理">
-      <app-config-client-user></app-config-client-user>
-  </mat-tab>
-  <mat-tab label="分组管理" >
-        <app-config-client-group></app-config-client-group>
-  </mat-tab>
-</mat-tab-group>
+<nav mat-tab-nav-bar backgroundColor="primary" color="accent" mat-align-tabs="center">
+  <a mat-tab-link *ngFor="let link of links"
+     (click)="activeLink = link"
+     [active]="activeLink == link" [routerLink]="link.url"> {{link.name}} </a>
+</nav>
+
+<router-outlet></router-outlet>
