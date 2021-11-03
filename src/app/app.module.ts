@@ -41,6 +41,7 @@ import {ConfigUserGroupComponent} from './pages/config-user-group/config-user-gr
 import {ConfigUserComponent} from "./pages/config-user/config-user.component";
 import { UserGroupSelectorComponent } from './views/user-group-selector/user-group-selector.component';
 import { UserGroupInsertComponent } from './views/user-group-insert/user-group-insert.component';
+import { DashboardOnlineComponent } from './views/dasboard-online/dashboard-online.component';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { UserGroupInsertComponent } from './views/user-group-insert/user-group-i
     ConfigUserGroupComponent,
     UserGroupSelectorComponent,
     UserGroupInsertComponent,
+    DashboardOnlineComponent,
   ],
   imports: [
     MatDialogModule,

@@ -9,19 +9,14 @@
   </mat-toolbar-row>
 </mat-toolbar>
 <mat-tab-group mat-align-tabs="center" color="accent" backgroundColor="primary">
-  <mat-tab label="First">
+  <mat-tab label="当前在线">
     <ng-template matTabContent>
-      Content 1
+      <app-dashboard-online></app-dashboard-online>
     </ng-template>
   </mat-tab>
-  <mat-tab label="Second ">
+  <mat-tab label="全部设备">
     <ng-template matTabContent>
       Content 2
-    </ng-template>
-  </mat-tab>
-  <mat-tab label="Third">
-    <ng-template matTabContent>
-      Content 3
     </ng-template>
   </mat-tab>
 </mat-tab-group>

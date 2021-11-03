@@ -1,0 +1,52 @@
+<div class="container">
+  <div class="item" *ngFor="let data of dataSource.data">
+    <mat-card class="icon-content">
+      <mat-icon>dvr</mat-icon>
+      <div class="data-content">
+        <div class="item">
+          <div class="title-left">
+            终端名称: {{data.name}}
+          </div>
+          <div class="title-right">
+            系统名称: {{data.system}}
+          </div>
+        </div>
+        <div class="item">
+          <div class="title-left">系统架构: {{data.arch}}</div>
+          <div class="title-right">网络流量: {{formatDisk(data.usedNetwork)}}/s</div>
+        </div>
+        <div class="item">
+          <p class="item-title">CPU:</p>
+          <div class="process">
+            <mat-progress-bar class="process-item" mode="determinate"
+                              [value]="data.cpuStage"
+            ></mat-progress-bar>
+          </div>
+          <p class="right" style="text-align: right">
+            {{data.cpuStage}}%
+          </p>
+        </div>
+        <div class="item">
+          <p class="item-title">内存:</p>
+          <div class="process">
+            <mat-progress-bar class="process-item" mode="determinate"
+                              [value]="(data.userMemory * 100)/ data.memory"></mat-progress-bar>
+          </div>
+          <p class="right" style="text-align: right">
+            {{formatDisk(data.userMemory)}}/{{formatDisk(data.memory)}}
+          </p>
+        </div>
+        <div class="item">
+          <p class="item-title">磁盘:</p>
+          <div class="process">
+            <mat-progress-bar class="process-item" mode="determinate"
+                              [value]="(data.usedDisk * 100)/ data.disk"></mat-progress-bar>
+          </div>
+          <p class="right" style="text-align: right">
+            {{formatDisk(data.usedDisk)}}/{{formatDisk(data.disk)}}
+          </p>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>
