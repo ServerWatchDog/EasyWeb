@@ -1,0 +1,11 @@
+<h1 mat-dialog-title>选择终端</h1>
+<mat-list>
+  <mat-list-item *ngFor="let client of clients" (click)="select(client)" style="cursor: pointer">
+    <mat-icon mat-list-icon>account_circle</mat-icon>
+    <div mat-line>{{client.name}}</div>
+    <div mat-line> {{client.user.name }} </div>
+  </mat-list-item>
+</mat-list>
+<div mat-dialog-actions>
+  <button mat-button (click)="closeClick()">取消</button>
+</div>

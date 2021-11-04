@@ -1,3 +1,5 @@
+<h3 >当前在线：</h3>
+
 <div class="container">
   <div class="item" *ngFor="let data of dataSource.data">
     <mat-card class="icon-content">
@@ -30,10 +32,10 @@
           <p class="item-title">内存:</p>
           <div class="process">
             <mat-progress-bar class="process-item" mode="determinate"
-                              [value]="(data.userMemory * 100)/ data.memory"></mat-progress-bar>
+                              [value]="(data.usedMemory * 100)/ data.memory"></mat-progress-bar>
           </div>
           <p class="right" style="text-align: right">
-            {{formatDisk(data.userMemory)}}/{{formatDisk(data.memory)}}
+            {{formatDisk(data.usedMemory)}}/{{formatDisk(data.memory)}}
           </p>
         </div>
         <div class="item">

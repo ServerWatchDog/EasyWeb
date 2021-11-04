@@ -24,7 +24,7 @@ export class ConfigClientComponent implements OnInit {
 
   ngOnInit(): void {
     this.title.setTitle("终端管理")
-    if ('/user' == decodeURI(window.location.pathname)) {
+    if ('/client' == decodeURI(window.location.pathname)) {
       this.route.navigate(['client','client']).then()
     }
     for (let link of this.links) {

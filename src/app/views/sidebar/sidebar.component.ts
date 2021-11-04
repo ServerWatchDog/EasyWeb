@@ -25,13 +25,13 @@ export class SidebarComponent implements OnInit {
     },
     {
       title: '终端管理',
-      url: '/client/client'
+      url: '/client'
     },{
       title: '日志管理',
-      url: '/user/log'
+      url: '/log'
     },{
       title: '用户管理',
-      url: '/user/user'
+      url: '/user'
     },
   ]
   menu: Menu[] = [...this.defaultMenu];
@@ -49,7 +49,7 @@ export class SidebarComponent implements OnInit {
   }
 
   select(url: string) {
-    if (url == decodeURI(window.location.pathname)) {
+    if (decodeURI(window.location.pathname).startsWith(url)) {
       return "item-select"
     } else {
       return "item-no-select"

@@ -18,7 +18,7 @@ export class DashboardOnlineComponent implements OnInit {
   }
 
   update() {
-    this.http.get<OnlineData>('/online', res => {
+    this.http.get<OnlineData>('/view/client/online', res => {
       this.dataSource = res
     })
   }
@@ -52,7 +52,7 @@ export interface OnlineDataItem {
   "cpuName": string,
   "cpuStage": number,
   "memory": number,
-  "userMemory": number,
+  "usedMemory": number,
   "disk": number,
   "usedDisk": number,
   "usedNetwork": number

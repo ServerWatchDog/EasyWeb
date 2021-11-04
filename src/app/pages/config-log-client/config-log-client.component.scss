@@ -1,0 +1,33 @@
+.container {
+  padding: 20px;
+  .sort{
+    display: flex;
+    align-items: center;
+    justify-content:space-between;
+    .input{
+      &>*{
+        margin-left: 20px;
+      }
+      .select{
+        flex-wrap: wrap;
+        display: inline-block;
+      }
+    }
+  }
+  table {
+    width: 100%;
+
+    th {
+      font-size: medium;
+      text-align: center;
+      width: 25%;
+    }
+    td {
+      font-size: medium;
+      text-align: center;
+      width: 25%;
+    }
+  }
+
+
+}

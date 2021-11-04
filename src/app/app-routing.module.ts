@@ -10,6 +10,9 @@ import {ConfigUserUserComponent} from "./pages/config-user-user/config-user-user
 import {ConfigUserGroupComponent} from "./pages/config-user-group/config-user-group.component";
 import {ConfigClientUserComponent} from "./pages/config-client-user/config-client-user.component";
 import {ConfigClientGroupComponent} from "./pages/config-client-group/config-client-group.component";
+import {ConfigLogComponent} from "./pages/config-log/config-log.component";
+import {ConfigLogUserComponent} from "./pages/config-log-user/config-log-user.component";
+import {ConfigLogClientComponent} from "./pages/config-log-client/config-log-client.component";
 
 const routes: Routes = [
   {
@@ -20,6 +23,19 @@ const routes: Routes = [
       {
         path: 'dashboard',
         component: DashBoardComponent
+      },{
+        path: 'log',
+        component: ConfigLogComponent,
+        children:[
+          {
+            path:'user',
+            component:ConfigLogUserComponent
+          },
+          {
+            path:'client',
+            component:ConfigLogClientComponent
+          }
+        ]
       }, {
         path: 'user',
         component: ConfigUserComponent,

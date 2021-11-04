@@ -20,7 +20,7 @@ import {MatTabsModule} from "@angular/material/tabs";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {SidebarComponent, SidebarDialogComponent} from './views/sidebar/sidebar.component';
 import {MatListModule} from "@angular/material/list";
-import {MatRippleModule} from "@angular/material/core";
+import {MatNativeDateModule, MatRippleModule} from "@angular/material/core";
 import {MatDialog, MatDialogModule} from "@angular/material/dialog";
 import {ConfigClientComponent} from './pages/config-client/config-client.component';
 import {ConfigUserUserComponent, UserConfigDialog} from './pages/config-user-user/config-user-user.component';
@@ -42,6 +42,11 @@ import {ConfigUserComponent} from "./pages/config-user/config-user.component";
 import { UserGroupSelectorComponent } from './views/user-group-selector/user-group-selector.component';
 import { UserGroupInsertComponent } from './views/user-group-insert/user-group-insert.component';
 import { DashboardOnlineComponent } from './views/dasboard-online/dashboard-online.component';
+import { ConfigLogComponent } from './pages/config-log/config-log.component';
+import { ConfigLogUserComponent } from './pages/config-log-user/config-log-user.component';
+import { ConfigLogClientComponent } from './pages/config-log-client/config-log-client.component';
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import { ClientSelectorComponent } from './views/client-selector/client-selector.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +71,10 @@ import { DashboardOnlineComponent } from './views/dasboard-online/dashboard-onli
     UserGroupSelectorComponent,
     UserGroupInsertComponent,
     DashboardOnlineComponent,
+    ConfigLogComponent,
+    ConfigLogUserComponent,
+    ConfigLogClientComponent,
+    ClientSelectorComponent,
   ],
   imports: [
     MatDialogModule,
@@ -92,6 +101,8 @@ import { DashboardOnlineComponent } from './views/dasboard-online/dashboard-onli
     MatCardModule,
     MatExpansionModule,
     MatSlideToggleModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   providers: [HttpClient],
   bootstrap: [ContainerComponent]
